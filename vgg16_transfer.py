@@ -52,6 +52,8 @@ loss:損失関数
 """
 model.compile(loss='categorical_crossentropy',optimizer=opt, metrics=['accuracy'])
 # トレーニングを実行
-model.fit(X_train, y_train, batch_size=32, epochs=3)
+model.fit(X_train, y_train, batch_size=32, epochs=5)
 # 評価
 score = model.evaluate(X_test, y_test, batch_size=32)
+
+model.save("./vgg16_transfer.h5")
